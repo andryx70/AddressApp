@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Address OrionTek</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email_address">Email Address</string>
+    <string name="prompt_password">Password</string>
+    <string name="text_button_login">login</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="prompt_password_confirm">Confirmation</string>
+    <string name="text_button_register">sing up</string>
+    <string name="existing">Existing</string>
+    <string name="new_user">New user</string>
+    <string name="empty_field">Field empty</string>
+    <string name="bad_email_structure">Bad email structure</string>
+    <string name="invalid_password">Password and confirmation are not the same</string>
+    <string name="oops">oops</string>
+    <string name="no_connect">You are not connected to the internet</string>
+    <string name="already_exist">Email already exists</string>
+    <string name="email_send">Email send</string>
+    <string name="check_email">Check your email</string>
+    <string name="invalid_pass_user">Invalid username and password</string>
+    <string name="send">Send</string>
+    <string name="cancel">Cancel</string>
+    <string name="all_user">All users</string>
+    <string name="All_addresses">All Addresses</string>
+    <string name="new_address">New Address</string>
+    <string name="save">Save</string>
+    <string name="success_address">added address</string>
+</resources>
