@@ -193,6 +193,8 @@ public class ExistingUserFragment extends Fragment implements Validator.Validati
 
         Log.i("login", "Method calling");
 
+        disabledAllField();
+
         mAuth.signInWithEmailAndPassword(email.getText().toString().trim(),
                 password.getText().toString().trim()).addOnCompleteListener(task -> {
 
@@ -276,6 +278,21 @@ public class ExistingUserFragment extends Fragment implements Validator.Validati
         loginBtn.setEnabled(true);
         forgotPassword.setEnabled(true);
     }
+
+    /**
+     * enableAllField
+     */
+    private void disabledAllField(){
+
+        Log.i("disabledAllField", "Method calling");
+
+        binding.emailAddress.setEnabled(false);
+        binding.password.setEnabled(false);
+        binding.loginBtn.setEnabled(false);
+        binding.forgotPassword.setEnabled(false);
+    }
+
+
 
     /**
      * forgotPasswordActivate

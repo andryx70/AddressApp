@@ -29,4 +29,6 @@
     <string name="new_address">New Address</string>
     <string name="save">Save</string>
     <string name="success_address">added address</string>
+    <string name="sign_out">Sign out</string>
+    <string name="options">Options</string>
 </resources>

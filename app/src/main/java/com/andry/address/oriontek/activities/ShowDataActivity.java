@@ -1,13 +1,20 @@
 package com.andry.address.oriontek.activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.andry.address.oriontek.R;
 import com.andry.address.oriontek.databinding.ActivityShowDataBinding;
+import com.andry.address.oriontek.login.LoginActivity;
 import com.andry.address.oriontek.models.Rol;
 import com.andry.address.oriontek.models.UserDto;
 import com.andry.address.oriontek.utils.Constants;
@@ -31,7 +38,39 @@ public class ShowDataActivity extends AppCompatActivity {
         binding = ActivityShowDataBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        initToolbar();
+
         setVisibilityTheItemInActivity();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.settings, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if (item.getItemId() == R.id.sign_out){
+            signOut();
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * signOut
+     */
+    private void signOut() {
+
+        Log.i("SingOut", "Calling method");
+
+        SharedPreferences preferences = getSharedPreferences(Constants.nameFileTheSharedPreferences, Context.MODE_PRIVATE);
+        preferences.edit().clear().apply();
+
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
     }
 
     /**
@@ -95,5 +134,14 @@ public class ShowDataActivity extends AppCompatActivity {
                     }
 
                 });
+    }
+
+    /**
+     * initToolbar
+     */
+    public void initToolbar(){
+
+        setSupportActionBar(binding.toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
     }
 }
